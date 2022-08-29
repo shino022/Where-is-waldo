@@ -4,12 +4,7 @@ import wally from '../images/wally.png';
 import whiteBeard from '../images/white-beard.png';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: skyblue;
-`;
+import { useState } from 'react';
 
 const NavBar = styled.nav`
   padding: 1em;
@@ -33,7 +28,8 @@ const NavBarLink = styled(Link)`
   text-decoration: none;
   color: black;
 `;
-const Main = () => {
+
+const Header = () => {
   const [ playGame, setPlayGame ] = useState(true);
   return (
     <div>
@@ -52,6 +48,4 @@ const Main = () => {
   );
 };
 
-
-
-export default Main;
+export default Header;
