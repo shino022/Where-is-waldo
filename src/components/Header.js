@@ -14,6 +14,7 @@ const NavBar = styled.nav`
 `;
 
 const ImageWrapper = styled.div`
+  text-align: center;
 `
 const Image = styled.img`
   width: 8em;
@@ -29,17 +30,28 @@ const NavBarLink = styled(Link)`
   color: black;
 `;
 
+const Name = styled.h2`
+  margin: 0;
+`
+
 const Header = () => {
   const [ playGame, setPlayGame ] = useState(true);
   return (
     <div>
       <NavBar>
-        <ImageWrapper>
           <Image src={logo} alt="Logo" />
+        <ImageWrapper>
+          <CharImage src={wally} alt="Wally" />
+          <Name>Wally</Name>
         </ImageWrapper>
-        <CharImage src={wally} alt="Wally" />
-        <CharImage src={odlaw} alt="Odlaw" />
-        <CharImage src={whiteBeard} alt="White beard" />
+        <ImageWrapper>
+          <CharImage src={odlaw} alt="Odlaw" />
+          <Name>Odlaw</Name>
+        </ImageWrapper>
+        <ImageWrapper>
+          <CharImage src={whiteBeard} alt="White beard" />
+          <Name>White beard</Name>
+        </ImageWrapper>
         {playGame ? 
         <NavBarLink onClick={()=>{setPlayGame(false)}} to="leader">Leader Board</NavBarLink> : 
         <NavBarLink onClick={()=>{setPlayGame(true)}}  to="/">Play Game</NavBarLink>}

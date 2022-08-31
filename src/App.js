@@ -2,11 +2,11 @@ import { BrowserRouter } from "react-router-dom";
 import Header from './components/Header.js';
 import Main from './components/Main.js';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
-      <Header/>
-      <Main/>
+      <Header />
+      <Main db={props.db} />
     </BrowserRouter>
   );
 }
