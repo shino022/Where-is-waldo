@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-
 import { doc, getDoc } from "firebase/firestore"; 
-
+import { useState } from 'react';
 
 const boxSize = 40;
 
@@ -42,14 +41,16 @@ const DropDown = (props) => {
     }
   }
 
-  
+
   //---------------------------------------------------------
 
 
   const handleCharClicked = async (e) => {
     const charName = e.target.textContent;
     const correctLoc = await getCoordinate(charName);
-    console.log(validate(correctLoc));
+    if(validate(correctLoc)) {
+      props.deleteChar(charName);
+    }
     console.log(e.target.textContent, "is clicked");
     console.log(props.relCoordinate.x, props.relCoordinate.y);
   }
@@ -66,9 +67,8 @@ const DropDown = (props) => {
           top: `${props.absCoordinate.y-(boxSize/2)}px`,
           left: `${props.absCoordinate.x+(boxSize/2)+4}px`
       }}>
-        <Char onClick={handleCharClicked}>Wally</Char>
-        <Char onClick={handleCharClicked}>Odlaw</Char>
-        <Char onClick={handleCharClicked}>White beard</Char>
+        {props.charList.map((char)=> <Char key={char} onClick={handleCharClicked}>{char}</Char>)}
+
       </List>
     </div>
   );

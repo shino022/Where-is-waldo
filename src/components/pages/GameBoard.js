@@ -8,9 +8,17 @@ const Board = styled.img`
 
 
 const GameBoard = (props) => {
+    const [ charList, setCharList ] = useState(["Wally", "Odlaw", "White beard"]);
     const [absCoordinate, setAbsCoordinate] = useState({});
     const [relCoordinate, setRelCoordinate] = useState({});
     const [shown, setShown] = useState(false);
+
+    const deleteChar = (charName) => {
+      console.log(charList, charName);
+  
+      setCharList(charList.filter((char) => charName !== char));
+      console.log("deleted");
+    }
 
     const toggleShown = () => {
       setShown(!shown);
@@ -30,19 +38,7 @@ const GameBoard = (props) => {
       setRelCoordinate(calcRelCoordinates());
 
 
-      // const convertToBox = () => {
-      //   const xStart
-      //   const xEnd
-      //   const yStart
-      //   const yEnd
-      // }
-
-      //convert it to the size of targeting box
-      //store it
-      //retrieve it after user clicks a char in the list
-      //get the coordinates of the char user selected
-      //see if the coordinates are in the scope
-      //mark that char
+    // if thres no more char left in the list leader board
 
     };
     
@@ -50,6 +46,8 @@ const GameBoard = (props) => {
     <div>
       <Board onClick={handleClick} src={board}/>
       {shown && <DropDown 
+        deleteChar={deleteChar}
+        charList={charList}
         db={props.db} 
         absCoordinate={absCoordinate}
         relCoordinate={relCoordinate}/>}
