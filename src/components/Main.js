@@ -1,3 +1,4 @@
+import Home from './pages/Home';
 import GameBoard from './pages/GameBoard';
 import LeaderBoard from './pages/LeaderBoard';
 import { Routes, Route } from "react-router-dom";
@@ -7,6 +8,10 @@ const Main = (props) => {
     <Routes>
       <Route
         path="/"
+        element={<Home />}
+      />
+      <Route
+        path="/game"
         element={<GameBoard db={props.db} />}
       />
       <Route

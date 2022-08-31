@@ -54,7 +54,7 @@ const Header = () => {
         </ImageWrapper>
         {playGame ? 
         <NavBarLink onClick={()=>{setPlayGame(false)}} to="leader">Leader Board</NavBarLink> : 
-        <NavBarLink onClick={()=>{setPlayGame(true)}}  to="/">Play Game</NavBarLink>}
+        <NavBarLink onClick={()=>{setPlayGame(true)}}  to="game">Play Game</NavBarLink>}
       </NavBar>      
     </div>
   );

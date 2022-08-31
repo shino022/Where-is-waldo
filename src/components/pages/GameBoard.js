@@ -36,9 +36,11 @@ const GameBoard = (props) => {
       toggleShown();
       setAbsCoordinate({x: e.pageX, y: e.pageY});
       setRelCoordinate(calcRelCoordinates());
-
-
-    // if thres no more char left in the list leader board
+      // cover
+      // start button
+      // measure time taken
+      // if theres no more char left in the list, post it on the leader board
+      //
 
     };
     
