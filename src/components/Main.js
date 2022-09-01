@@ -12,7 +12,7 @@ const Main = (props) => {
       />
       <Route
         path="/game"
-        element={<GameBoard db={props.db} />}
+        element={<GameBoard db={props.db} setTimeTaken={props.setTimeTaken} />}
       />
       <Route
         path="/leader"

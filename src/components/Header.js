@@ -7,39 +7,60 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const NavBar = styled.nav`
-  padding: 1em;
+  padding: 10px;
+  height: 100px;
   display: flex;
+  width: 98%;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  background-color: white;
+  top: 3px;
 `;
+
+const Div = styled.div`
+  height: 100px;  
+`
 
 const ImageWrapper = styled.div`
   text-align: center;
 `
 const Image = styled.img`
-  width: 8em;
+  width: 7em;
 `;
 
 const CharImage = styled.img`
-  width: 5em;
+  width: 4em;
 `
 
 const NavBarLink = styled(Link)`
-  font-size: 2.4rem;  
+  font-size: 2rem;  
   text-decoration: none;
   color: black;
 `;
 
+const Timer = styled.div`
+  font-size: 2rem;  
+  text-decoration: none;
+  color: black;
+`;
+
+const TimerWrapper = styled.div`
+`
+
 const Name = styled.h2`
+  font-size: 1.4rem;
   margin: 0;
 `
 
-const Header = () => {
+const Header = (props) => {
   const [ playGame, setPlayGame ] = useState(true);
   return (
+    
     <div>
+      <Div />
       <NavBar>
-          <Image src={logo} alt="Logo" />
+        <Image src={logo} alt="Logo" />
         <ImageWrapper>
           <CharImage src={wally} alt="Wally" />
           <Name>Wally</Name>
@@ -52,11 +73,14 @@ const Header = () => {
           <CharImage src={whiteBeard} alt="White beard" />
           <Name>White beard</Name>
         </ImageWrapper>
-        {playGame ? 
-        <NavBarLink onClick={()=>{setPlayGame(false)}} to="leader">Leader Board</NavBarLink> : 
+        {playGame ?
+        <TimerWrapper>
+          <Timer>{props.timeTaken} seconds</Timer>
+          <NavBarLink onClick={()=>{setPlayGame(false)}} to="leader">Leader Board</NavBarLink>
+        </TimerWrapper> :
         <NavBarLink onClick={()=>{setPlayGame(true)}}  to="game">Play Game</NavBarLink>}
-      </NavBar>      
-    </div>
+      </NavBar>
+    </div>     
   );
 };
 

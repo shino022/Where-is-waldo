@@ -41,9 +41,14 @@ const GameBoard = (props) => {
       // measure time taken
       // if theres no more char left in the list, post it on the leader board
       //
-
     };
-    
+
+    useEffect(() => {
+      const timer = setInterval(() => {
+        props.setTimeTaken((timeTaken) => timeTaken+1); 
+    }, 1000);
+      return ()=>{clearInterval(timer)};
+    },[])
   return (
     <div>
       <Board onClick={handleClick} src={board}/>
