@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { doc, getDoc } from "firebase/firestore"; 
-import { useState } from 'react';
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const boxSize = 40;
 
 const List = styled.ul`
@@ -24,12 +24,13 @@ const TargBox = styled.div`
 
 
 const DropDown = (props) => {
-  //-------------------------------------------------
+
   const getCoordinate = async (char) => {
     const docRef = doc(props.db, "characters", `${char}`);
     const docSnap = await getDoc(docRef);
     return docSnap.data();
   };
+
   const validate = ({x, y}) => {
     console.log(x,y,props.relCoordinate.x,props.relCoordinate.y)
     if(props.relCoordinate.x < x - 1 || props.relCoordinate.x > x + 1) {
@@ -41,10 +42,6 @@ const DropDown = (props) => {
     }
   }
 
-
-  //---------------------------------------------------------
-
-
   const handleCharClicked = async (e) => {
     const charName = e.target.textContent;
     const correctLoc = await getCoordinate(charName);
@@ -54,6 +51,14 @@ const DropDown = (props) => {
     console.log(e.target.textContent, "is clicked");
     console.log(props.relCoordinate.x, props.relCoordinate.y);
   }
+
+  let navigate = useNavigate();
+  useEffect(()=>{
+    if(!props.charList.length) {
+      props.setPlayGame(false);
+      navigate("/leader");
+    }
+  },[props.charList])
 
   return (
     <div>

@@ -6,15 +6,15 @@ import { useState, useEffect } from 'react';
 
 const App = (props) => {
   const [ timeTaken, setTimeTaken ] = useState(0);
+  const [ playGame, setPlayGame ] = useState(true);
 
   useEffect(()=>{
-    console.log(timeTaken);
   },[timeTaken])
  
   return (
     <BrowserRouter>
-      <Header timeTaken={timeTaken} />
-      <Main db={props.db} setTimeTaken={setTimeTaken}  />
+      <Header playGame={playGame} setPlayGame={setPlayGame} timeTaken={timeTaken} />
+      <Main playGame={playGame} setPlayGame={setPlayGame} db={props.db} setTimeTaken={setTimeTaken} />
     </BrowserRouter>
   );
 }

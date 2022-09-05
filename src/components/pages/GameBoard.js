@@ -53,6 +53,8 @@ const GameBoard = (props) => {
     <div>
       <Board onClick={handleClick} src={board}/>
       {shown && <DropDown 
+        playGame={props.playGame} 
+        setPlayGame={props.setPlayGame}
         deleteChar={deleteChar}
         charList={charList}
         db={props.db} 

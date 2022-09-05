@@ -54,7 +54,6 @@ const Name = styled.h2`
 `
 
 const Header = (props) => {
-  const [ playGame, setPlayGame ] = useState(true);
   return (
     
     <div>
@@ -73,15 +72,16 @@ const Header = (props) => {
           <CharImage src={whiteBeard} alt="White beard" />
           <Name>White beard</Name>
         </ImageWrapper>
-        {playGame ?
+        {props.playGame ?
         <TimerWrapper>
           <Timer>{props.timeTaken} seconds</Timer>
-          <NavBarLink onClick={()=>{setPlayGame(false)}} to="leader">Leader Board</NavBarLink>
+          <NavBarLink onClick={()=>{props.setPlayGame(false)}} to="leader">Leader Board</NavBarLink>
         </TimerWrapper> :
-        <NavBarLink onClick={()=>{setPlayGame(true)}}  to="game">Play Game</NavBarLink>}
+        <NavBarLink onClick={()=>{props.setPlayGame(true)}}  to="game">Play Game</NavBarLink>}
       </NavBar>
     </div>     
   );
 };
 
 export default Header;
+
