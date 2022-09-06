@@ -13,6 +13,7 @@ const User = styled.div`
   background-color: rgb(222, 222, 222);
   width: 400px;
   padding: 10px;
+  white-space: pre-wrap;
 `;
 
 const Name = styled.div`
@@ -28,6 +29,7 @@ const Score = styled.div`
 
 const LeaderBoard = (props) => {
   const [ leaderData, setLeaderData ] = useState([]);
+  let place = 0;
   const getLeaderBoard = async () => {
     const querySnapshot = await getDocs(collection(props.db, "LeaderBoard"));
     const buffer = [];
@@ -41,15 +43,18 @@ const LeaderBoard = (props) => {
   };
   useEffect(()=>{
    getLeaderBoard()
+   place = 0;
   },[])
   return (
     <Wrapper>
       <h1>Leader Board</h1>
-      {leaderData.map( data => 
+      {leaderData.map( data => {
+        return(
         <User>
+          <div>{`${++place}. `}</div>
           <Name>Name: {data.name}</Name>
           <Score>Score: {data.record}s</Score>
-        </User> )}
+        </User> );})}
     </Wrapper>
   );
 }
