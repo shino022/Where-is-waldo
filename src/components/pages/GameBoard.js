@@ -55,6 +55,8 @@ const GameBoard = (props) => {
       {shown && <DropDown 
         playGame={props.playGame} 
         setPlayGame={props.setPlayGame}
+        setShown={setShown}
+        timeTaken={props.timeTaken} 
         deleteChar={deleteChar}
         charList={charList}
         db={props.db} 

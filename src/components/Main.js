@@ -12,11 +12,23 @@ const Main = (props) => {
       />
       <Route
         path="/game"
-        element={<GameBoard playGame={props.playGame} setPlayGame={props.setPlayGame} db={props.db} setTimeTaken={props.setTimeTaken} />}
+        element={
+          <GameBoard 
+            playGame={props.playGame} 
+            setPlayGame={props.setPlayGame} 
+            db={props.db} 
+            setTimeTaken={props.setTimeTaken} 
+            timeTaken={props.timeTaken}
+          />}
       />
       <Route
         path="/leader"
-        element={<LeaderBoard />}
+        element={
+          <LeaderBoard 
+            timeTaken={props.timeTaken} 
+            setTimeTaken={props.setTimeTaken} 
+            db={props.db} 
+        />}
       />
     </Routes>
 

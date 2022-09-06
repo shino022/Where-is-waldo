@@ -77,7 +77,7 @@ const Header = (props) => {
           <Timer>{props.timeTaken} seconds</Timer>
           <NavBarLink onClick={()=>{props.setPlayGame(false)}} to="leader">Leader Board</NavBarLink>
         </TimerWrapper> :
-        <NavBarLink onClick={()=>{props.setPlayGame(true)}}  to="game">Play Game</NavBarLink>}
+        <NavBarLink onClick={()=>{props.setPlayGame(true); props.setTimeTaken(0)}}  to="game">Play Game</NavBarLink>}
       </NavBar>
     </div>     
   );

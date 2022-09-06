@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { doc, getDoc } from "firebase/firestore"; 
+import { doc, getDoc, setDoc } from "firebase/firestore"; 
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 const boxSize = 40;
@@ -50,11 +50,24 @@ const DropDown = (props) => {
     }
     console.log(e.target.textContent, "is clicked");
     console.log(props.relCoordinate.x, props.relCoordinate.y);
+    setTimeout(() => {
+      props.setShown(false);
+    }, 500);
   }
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(()=>{
     if(!props.charList.length) {
+      const storeData = async(user)=>{
+        await setDoc(doc(props.db, "LeaderBoard", `${user}`), {
+          name: `${user}`,
+          record: `${props.timeTaken}`
+        });
+      };
+
+      const user = prompt("Enter your name");
+      storeData(user);
       props.setPlayGame(false);
       navigate("/leader");
     }

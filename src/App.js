@@ -13,8 +13,8 @@ const App = (props) => {
  
   return (
     <BrowserRouter>
-      <Header playGame={playGame} setPlayGame={setPlayGame} timeTaken={timeTaken} />
-      <Main playGame={playGame} setPlayGame={setPlayGame} db={props.db} setTimeTaken={setTimeTaken} />
+      <Header playGame={playGame} setPlayGame={setPlayGame} timeTaken={timeTaken} setTimeTaken={setTimeTaken} />
+      <Main playGame={playGame} setPlayGame={setPlayGame} db={props.db} timeTaken={timeTaken} setTimeTaken={setTimeTaken} />
     </BrowserRouter>
   );
 }
