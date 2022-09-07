@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <ButtonContainer>
       <Button>
-        <NavBarLink to="game" >Play Game</NavBarLink>
+        <NavBarLink to="/Where-is-waldo/game" >Play Game</NavBarLink>
       </Button>
     </ButtonContainer>
   )

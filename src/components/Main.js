@@ -7,11 +7,11 @@ const Main = (props) => {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/Where-is-waldo"
         element={<Home />}
       />
       <Route
-        path="/game"
+        path="/Where-is-waldo/game"
         element={
           <GameBoard 
             playGame={props.playGame} 
@@ -22,7 +22,7 @@ const Main = (props) => {
           />}
       />
       <Route
-        path="/leader"
+        path="/Where-is-waldo/leader"
         element={
           <LeaderBoard 
             timeTaken={props.timeTaken} 
