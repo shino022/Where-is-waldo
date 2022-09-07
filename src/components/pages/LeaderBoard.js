@@ -39,7 +39,6 @@ const LeaderBoard = (props) => {
     });
     buffer.sort((a, b)=>{return a.record-b.record });
     setLeaderData(buffer);
-    leaderData.forEach(data=>console.log(data.name, data.record));
   };
   useEffect(()=>{
    getLeaderBoard()
@@ -50,7 +49,7 @@ const LeaderBoard = (props) => {
       <h1>Leader Board</h1>
       {leaderData.map( data => {
         return(
-        <User>
+        <User key={data.name}>
           <div>{`${++place}. `}</div>
           <Name>Name: {data.name}</Name>
           <Score>Score: {data.record}s</Score>

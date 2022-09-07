@@ -13,11 +13,8 @@ const GameBoard = (props) => {
     const [relCoordinate, setRelCoordinate] = useState({});
     const [shown, setShown] = useState(false);
 
-    const deleteChar = (charName) => {
-      console.log(charList, charName);
-  
+    const deleteChar = (charName) => {  
       setCharList(charList.filter((char) => charName !== char));
-      console.log("deleted");
     }
 
     const toggleShown = () => {

@@ -32,7 +32,6 @@ const DropDown = (props) => {
   };
 
   const validate = ({x, y}) => {
-    console.log(x,y,props.relCoordinate.x,props.relCoordinate.y)
     if(props.relCoordinate.x < x - 1 || props.relCoordinate.x > x + 1) {
       return false;
     } else if(props.relCoordinate.y < y - 2 || props.relCoordinate.y > y + 2) {
@@ -48,8 +47,6 @@ const DropDown = (props) => {
     if(validate(correctLoc)) {
       props.deleteChar(charName);
     }
-    console.log(e.target.textContent, "is clicked");
-    console.log(props.relCoordinate.x, props.relCoordinate.y);
     setTimeout(() => {
       props.setShown(false);
     }, 500);
