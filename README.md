@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Where is Waldo (Photo Tagging) type App built with React and Firebase.\
+[Live Demo](http://shino022.github.io/Where-is-waldo)👈
 
 ## Available Scripts
 
