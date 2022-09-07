@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/Where-is-waldo/static/js/main.b85a7e65.js",
+    "static/media/game-board.jpg": "/Where-is-waldo/static/media/game-board.a0e0289ef358bd1a3745.jpg",
+    "static/media/wally-logo.png": "/Where-is-waldo/static/media/wally-logo.80255daa3551c95d5595.png",
+    "static/media/white-beard.png": "/Where-is-waldo/static/media/white-beard.c11b7e7410c19a20c15b.png",
+    "static/media/odlaw.png": "/Where-is-waldo/static/media/odlaw.53fbcd924126a4e4f16f.png",
+    "static/media/wally.png": "/Where-is-waldo/static/media/wally.46b420037c5bb1542d88.png",
+    "index.html": "/Where-is-waldo/index.html",
+    "main.b85a7e65.js.map": "/Where-is-waldo/static/js/main.b85a7e65.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b85a7e65.js"
+  ]
+}
