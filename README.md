@@ -1,5 +1,6 @@
 # Getting Started with Create React App
 
+A Where is Waldo (Photo Tagging) type App built with React and Firebase.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
