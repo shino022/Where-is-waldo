@@ -66,7 +66,7 @@ const DropDown = (props) => {
       const user = prompt("Enter your name");
       storeData(user);
       props.setPlayGame(false);
-      navigate("/leader");
+      navigate("/Where-is-waldo/leader");
     }
   },[props.charList])
 
